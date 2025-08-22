@@ -20,6 +20,7 @@ Com ele, você pode **adicionar, remover e listar tarefas** de forma prática. �
 ## 🛠️ Tecnologias utilizadas
 
 - Python
+- SQLite
 
 ---
 
@@ -57,8 +58,6 @@ python main.py
 ## 🚀 Melhorias futuras
 
 - Marcar tarefas como concluídas ✅
-
-- Salvar tarefas em um arquivo .txt ou .json 💾
 
 - Criar uma versão com interface gráfica (Tkinter ou PyQt) 🖥️
 

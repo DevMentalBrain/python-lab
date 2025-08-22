@@ -21,13 +21,13 @@ Aqui você encontrará **projetos, snippets, exercícios e testes** que desenvol
 
 ## 📂 Estrutura do Repositório
 
-python-lab/
-│-- README.md # Documentação do repositório
-| docs/ #Documentações e materiais de ensino
-| projects/ #Pequenos projetos para uso no dia dia
-| | -- to-do-list/ #Programa de lista de tarefas (Em desenvolvimento)
-| snippets/ #Códigos pequenos e testes
-| | -- conversor-medidas/ #Conversor de medidas (Metros, Pés e Jardas) (Funcional, desenvolvendo melhorias)
+python-lab/ \
+│-- README.md # Documentação do repositório \
+| docs/ #Documentações e materiais de ensino \
+| projects/ #Pequenos projetos para uso no dia dia \
+| | -- to-do-list/ #Programa de lista de tarefas (Em desenvolvimento) \
+| snippets/ #Códigos pequenos e testes \
+| | -- conversor-medidas/ #Conversor de medidas (Metros, Pés e Jardas) (Funcional, desenvolvendo melhorias) \
 
 ---
 
