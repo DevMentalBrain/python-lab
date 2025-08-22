@@ -27,8 +27,14 @@ Com ele, você pode **adicionar, remover e listar tarefas** de forma prática. �
 
 to-do-list/
 
-│-- main.py          # Arquivo principal do programa
-│-- README.md        # Documentação do projeto
+│-- main.py                 # Arquivo principal do programa \
+│-- README.md               # Documentação do projeto \
+|-- db/                     # Banco de Dados (SQLite) \
+| |-- data-model.md         # Modelagem de dados \
+| | -- database.py          # Conexão e funções gerais em SQLite \
+| -- models/                # Classes \
+| | -- task.py \
+| | -- to_do_list.py \
 
 ---
 
