@@ -1,3 +1,5 @@
+import sqlite3
+
 #importando conexão com banco de dados
 from database import create_connection
 
@@ -24,6 +26,7 @@ db_cursor.execute("""
                   FOREIGN KEY (task_list_id) REFERENCES task_list (id)
                   )
 """)
+
 
 db_connection.commit()
 db_connection.close()
