@@ -5,9 +5,9 @@ class ToDoListRepository:
     
     def createNewList(task_name):
         if(task_name == None):
-            return False
+            return -1
         elif(isinstance(task_name, str) == False):
-            return False
+            return -1
         
         try: 
             #atribui o banco de dados a variavel
@@ -21,11 +21,25 @@ class ToDoListRepository:
         """, (task_name,))
             
             db_connection.commit()
-            return True
+            new_list_id = db_cursor.lastrowid 
+            return new_list_id
         
         except sqlite3.Error as e:
             print("Erro: ", e)
-            return False
+            return -1
         finally:
             if(db_connection):  
                 db_connection.close()
+
+    def getAllLists():
+        #atribui o banco de dados a variavel
+        db_connection = create_connection()
+        #objeto que executa os comandos SQL
+        db_cursor = db_connection.cursor()
+
+        db_cursor.execute("""
+            SELECT * FROM task_list
+        """)
+
+        result = db_cursor.fetchall()
+        print(result)
