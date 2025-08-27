@@ -1,9 +1,9 @@
 import sqlite3
-from db import create_connection
+from db.database import create_connection
 
 class ToDoListRepository:
     
-    def createNewList(task_name):
+    def create_new_list(task_name):
         if(task_name == None):
             return -1
         elif(isinstance(task_name, str) == False):
@@ -31,7 +31,7 @@ class ToDoListRepository:
             if(db_connection):  
                 db_connection.close()
 
-    def getAllLists():
+    def get_name_all_lists():
         #atribui o banco de dados a variavel
         db_connection = create_connection()
         #objeto que executa os comandos SQL
@@ -42,4 +42,10 @@ class ToDoListRepository:
         """)
 
         result = db_cursor.fetchall()
-        print(result)
+        
+        registered_lists = []
+
+        for i in range(len(result)):
+            registered_lists.append(result[i - 1][1])
+
+        return registered_lists
