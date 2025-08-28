@@ -1,23 +1,32 @@
 from db.repo.to_do_list_repository import ToDoListRepository
 from models.to_do_list import TodoList
-from models.display_task_lists import display_task_lists
+from models.display_to_do_lists import display_to_do_lists
 
-# listaDeCompras = TodoList("Tarefas de Casa")
-# task_list_created_id = ToDoListRepository.createNewList(listaDeCompras.name)
-
-# if(task_list_created_id == -1):
-#     print("\nInfelizmente ocorreu um erro! Tente novamente!")
-# else:
-#     print("\nLista criada com sucesso com id: " + str(task_list_created_id))
 
 
 while True:
-    print("\nWelcome to the task list system!\n\n(1)View all task lists \n(2)To leave \n")
+    print("\nWelcome to the to do list system!\n\n(1)View all to do lists \n(2)Add new to do list \n(0)To leave. \n")
     user_selected_option = int(input("Select an option: ")) 
     match user_selected_option:
         case 1:
-            display_task_lists()
+            display_to_do_lists()
         case 2:
+            new_to_do_list_name = input("\nEnter the name of the to do list: ")
+            if new_to_do_list_name == "":
+                print("\nError: A name cannot be empty!")
+            elif len(new_to_do_list_name) < 3:
+                print("Error: A name cannot contain fewer than 3 characters!")
+            elif len(new_to_do_list_name) > 50:
+                print("Error: A name cannot contain more than 50 characters!")
+            else:
+                new_to_do_list = TodoList(new_to_do_list_name)
+                task_list_created_id = ToDoListRepository.create_new_list(new_to_do_list.name)
+
+                if(task_list_created_id == -1):
+                    print("\n Error: Unfortunately, it was not possible to create your list. Please try again.")
+                else:
+                    print("\nTask list successfully created, with id: " + str(task_list_created_id))
+        case 0:
             break
         case _:
-            print("Invalid option!") 
+            print("\nInvalid option!")

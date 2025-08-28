@@ -4,9 +4,11 @@ from db.database import create_connection
 class ToDoListRepository:
     
     def create_new_list(task_name):
-        if(task_name == None):
+        if task_name == None:
             return -1
-        elif(isinstance(task_name, str) == False):
+        if task_name == "":
+            return -1
+        elif isinstance(task_name, str) == False:
             return -1
         
         try: 
@@ -22,6 +24,7 @@ class ToDoListRepository:
             
             db_connection.commit()
             new_list_id = db_cursor.lastrowid 
+            
             return new_list_id
         
         except sqlite3.Error as e:
