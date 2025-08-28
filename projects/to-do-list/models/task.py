@@ -1,9 +1,10 @@
 
 class Task:
-    def __init__(self, name, description, completed):
+    def __init__(self, name, description, status, id_to_do_list):
         self.name = name
         self.description = description
-        self.completed = completed
+        self.status = status
+        self.id_to_do_list = id_to_do_list
     
     #Get
     @property
